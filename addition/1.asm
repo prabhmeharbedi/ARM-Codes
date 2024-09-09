@@ -1,0 +1,25 @@
+	AREA INDIRECT, CODE, READONLY
+	ENTRY
+MAIN
+	; Store
+	LDR R0, A1
+	LDR R1, V1
+	LDR R2, V2
+	STR R2, [R0]
+	STR R3, [R1], #4
+	
+	; Load
+	; LDR R2, [R0]
+	; LDR R3, [R1]
+	
+	; Add
+	ADD R4, R2, R3
+	
+	; Store answer
+	STR R4, [R1, #4]
+	
+	AREA VALUE, DATA, READONLY
+A1 DCD &1000
+V1 DCD &11AA22BB
+V2 DCD &33CC44DD
+	END

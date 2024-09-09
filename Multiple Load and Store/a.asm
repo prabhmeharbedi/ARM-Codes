@@ -1,0 +1,16 @@
+;Multple Load and Store with loop
+
+AREA FIVE, CODE, READONLY
+	ENTRY
+MAIN
+	MOV R7, #8
+	LDR R1, V1
+	LDR R5, V2
+LOOP
+	LDRB R2, [R1], #1
+	STRB R2, [R5], #1
+	SUBS R7, R7, #1
+	BNE LOOP
+V1 DCD &00001000
+V2 DCD &00001010
+	END
